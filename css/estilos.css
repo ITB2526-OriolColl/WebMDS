@@ -28,6 +28,7 @@ header {
   z-index: 100;
   border-bottom: 1px solid #333;
   backdrop-filter: blur(10px);
+
 }
 
 .logo {
@@ -388,6 +389,113 @@ header {
     font-size: 0.8em;
     font-weight: bold;
     margin-top: 10px;
+}
+
+.skills {
+    padding: 40px 10%;
+    background: #0a0a0a;
+    text-align: center;
+}
+
+.skills h3 {
+    font-family: 'Rajdhani', sans-serif;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.code-color { color: #007bff; }
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-tag {
+    background: rgba(0, 123, 255, 0.05);
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    color: #00d4ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+.skill-tag:hover {
+    background: rgba(0, 123, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Botón Principal de Contacto */
+.main-contact-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 20px 40px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+    border: none;
+    cursor: pointer;
+}
+/* Esto forzará al botón a irse al extremo derecho */
+.btn-contact {
+  margin-left: auto;
+  margin-right: 0;   /* Se pega al borde derecho */
+}
+
+.main-contact-button:hover {
+    transform: scale(1.05);
+    background: #00d4ff;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.7);
+    color: #000;
+}
+
+/* Efecto de brillo que recorre el botón */
+.main-contact-button::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+.main-contact-button:hover::after {
+    left: 100%;
+    top: 100%;
+}
+
+/* Sección de cierre */
+.final-cta {
+    padding: 100px 10%;
+    text-align: center;
+    background: linear-gradient(to top, #000, #0a0a0a);
+    border-top: 1px solid #222;
+}
+
+.final-cta h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.final-cta p {
+    color: #888;
+    margin-bottom: 40px;
+    font-size: 1.1em;
 }
 
 footer {
