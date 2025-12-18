@@ -1,0 +1,401 @@
+/* Variables para facilitar cambios de color */
+:root {
+  --primary: #007bff; /* Azul tecnológico */
+  --bg-dark: #0a0a0a;
+  --card-bg: #161616;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-dark);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Header estilizado */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(17, 17, 17, 0.95);
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #333;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.6em;
+  letter-spacing: 1px;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+.brand, .logo {
+  font-family: 'Orbitron', sans-serif; /* Fuente futurista/tecnológica */
+  letter-spacing: 2px;
+}
+
+.menu {
+  position: absolute;
+  left: 40px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+.menu:hover { color: white; }
+
+.hero {
+  position: relative;
+  width: 100%;
+  /* Reducimos la altura para que asomen los proyectos */
+  height: 60vh;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reducimos un poco el tamaño del texto y el padding del cuadro central */
+.hero-overlay {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 25px 50px; /* Padding más compacto */
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 123, 255, 0.3);
+  /* Escalar un poco hacia abajo si es necesario */
+  transform: scale(0.9);
+}
+
+.hero-overlay h1 {
+  font-size: 3em; /* Bajamos de 4em a 3em */
+  margin-bottom: 15px;
+}
+/* El fondo de código con movimiento vertical */
+/* Hacemos que el fondo de código sea mucho más visible */
+.code-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Fira Code', 'Courier New', monospace; /* Fuente más técnica */
+  font-size: 15px; /* Un poco más grande */
+  line-height: 1.2;
+  color: rgba(0, 123, 255, 0.5); /* Azul más intenso */
+  white-space: pre;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Colores para que los logs resalten (se aplican por JS) */
+.log-error { color: #ff4d4d; font-weight: bold; }
+.log-success { color: #2ecc71; }
+.log-warning { color: #f1c40f; }
+.log-info { color: #00d4ff; }
+
+/* Oscurecemos un poco más el overlay central para que el fondo brille detrás */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 30px rgba(0, 123, 255, 0.2);
+}
+
+/* Efecto de rejilla técnica muy marcada */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 123, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 123, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 1;
+}
+
+/* Línea de escaneo que sube y baja */
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 123, 255, 0.2);
+  opacity: 0.5;
+  box-shadow: 0 0 20px var(--primary);
+  animation: scan 4s linear infinite;
+  z-index: 2;
+}
+
+@keyframes scan {
+  0% { top: -5%; }
+  100% { top: 100%; }
+}
+
+/* Estilo del texto para que destaque sobre el fondo complejo */
+.hero-overlay {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 123, 255, 0.3);
+}
+
+.hero-tagline {
+  color: #00d4ff;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Añade un patrón de rejilla sutil para dar profundidad */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4); /* Oscurece la imagen para que el texto resalte */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+/* Estilo solicitado: CyberAdmin a la izquierda, Mi Portfolio a la derecha */
+.hero-overlay h1 {
+  font-size: 4em;
+  margin-bottom: 25px;
+  font-weight: 900;
+}
+
+.brand {
+  color: var(--primary);
+  text-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+.subtitle {
+  font-weight: 200;
+  font-size: 0.6em;
+  margin-left: 15px;
+  border-left: 2px solid #fff;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+
+.cta-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Proyectos mejorados */
+./* Contenedor Principal de Proyectos */
+.projects {
+  padding: 60px 10%;
+  background: #050505;
+}
+
+.projects-header h2 {
+  font-family: 'Rajdhani', sans-serif; /* Profesional, condensada y moderna */
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2.2em;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Punto parpadeante de "En Vivo" */
+.pulse {
+  color: #007bff;
+  margin-right: 10px;
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* Grid de Proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+/* Tarjeta estilo Terminal */
+.project-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: #007bff;
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+}
+
+/* Barra superior de la tarjeta */
+.project-terminal-bar {
+  background: #1a1a1a;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #222;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-title {
+  color: #666;
+  font-size: 12px;
+  font-family: monospace;
+  margin-left: 10px;
+}
+
+/* Imagen y Overlay */
+.img-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* Esto hace que cualquier imagen que subas se adapte al estilo Cyber */
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.7) contrast(1.2); /* Blanco y negro tecnológico */
+  transition: all 0.5s ease;
+}
+
+.project-card:hover img {
+  filter: grayscale(0%) brightness(1); /* Recupera el color al pasar el ratón */
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 123, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.project-card:hover .img-overlay {
+  opacity: 1;
+}
+
+/* Información del Proyecto */
+.project-info {
+  padding: 25px;
+}
+
+.project-info h3 {
+  margin: 0 0 15px 0;
+  color: #007bff;
+}
+
+.project-info p {
+  color: #aaa;
+  font-size: 0.95em;
+  margin-bottom: 20px;
+}
+
+/* Etiquetas Tecnológicas */
+.tech-stack {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tech-stack span {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  color: #eee;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-family: monospace;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(0, 123, 255, 0.1);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+  padding: 40px;
+  border-top: 1px solid #222;
+  text-align: center;
+  color: #666;
+}
+
+
+

@@ -2,46 +2,85 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Taycan Black Edition</title>
-  <link rel="stylesheet" href="estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberAdmin - Portfolio</title>
+  <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header>
-    <div class="logo">PORSCHE</div>
-    <div class="menu">Menú</div>
+    <div class="menu">☰ Menú</div>
+    <div class="logo">Oriol Coll | ASIX</div>
   </header>
 
   <main>
-    <section class="hero">
-      <video autoplay muted loop class="video-bg">
-        <source src="img/Video_inicio.mp4" type="video/mp4">
+   <section class="hero">
+  <div class="code-bg" id="code-bg"></div>
 
-      </video>
-      <div class="hero-overlay">
-        <h1>Taycan Black Edition.</h1>
-        <button class="cta-button">Descubra más</button>
-      </div>
-    </section>
+  <div class="scanline"></div>
 
-    <section class="projects">
-  <div class="project">
-    <img src="img/mclaren-.jpeg" alt="McLaren con puertas abiertas">
-    <h2>Proyecto 1: McLaren Dihedral</h2>
-    <p>Este modelo destaca por sus puertas de apertura vertical y diseño aerodinámico extremo. Una obra de ingeniería pensada para impresionar tanto en pista como en ciudad.</p>
-  </div>
-  <div class="project">
-    <img src="img/mclaren-600lt.jpg" alt="McLaren 600LT en estudio">
-    <h2>Proyecto 2: McLaren 600LT</h2>
-    <p>Con su carrocería ligera y motor de alto rendimiento, el 600LT representa la esencia de la velocidad y el control. Ideal para los amantes de la conducción pura.</p>
+  <div class="hero-overlay">
+    <h1><span class="brand">CyberAdmin</span> <span class="subtitle">Mi Portfolio</span></h1>
+    <p class="hero-tagline">Administración de Sistemas • Redes • Seguridad</p>
+    <button class="cta-button">Explorar Proyectos</button>
   </div>
 </section>
 
+    <section class="projects">
+  <div class="projects-header">
+    <h2><span class="pulse">●</span> Repositorio de Proyectos</h2>
+  </div>
+
+  <div class="projects-grid">
+  <article class="project-card">
+    <div class="project-terminal-bar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="terminal-title">infraestructura_red.pka</span>
+    </div>
+    <div class="img-container">
+      <img src="img/Cisco.png" alt="Infraestructura de Red Segura">
+      <div class="img-overlay">Explorar Topología</div>
+    </div>
+    <div class="project-info">
+      <h3>Diseño de Red Corporativa Segura</h3>
+      <p>Configuración integral de switches y routers Cisco. Implementación de segmentación por VLANs, protocolos OSPF y listas de control de acceso (ACL) para proteger el tráfico interno.</p>
+      <div class="tech-stack">
+        <span>Cisco IOS</span>
+        <span>VLANs</span>
+        <span>Routing</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-terminal-bar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="terminal-title">hardening_linux.sh</span>
+    </div>
+    <div class="img-container">
+      <img src="img/Linux.png" alt="Bastionado de Servidores">
+      <div class="img-overlay">Ver Documentación</div>
+    </div>
+    <div class="project-info">
+      <h3>Seguridad y Hardening en Linux</h3>
+      <p>Auditoría y securización de servidores Debian/Ubuntu. Incluye configuración de Firewalls perimetrales, gestión de políticas de contraseñas y monitorización de logs para detección de intrusos.</p>
+      <div class="tech-stack">
+        <span>Bash</span>
+        <span>UFW/Fail2Ban</span>
+        <span>Security</span>
+      </div>
+    </div>
+
+    </article>
+  </div>
+</section>
   </main>
 
   <footer>
-    © 2025 Porsche Ibérica – Todos los derechos reservados
+    © 2025 CyberAdmin - Administrador de Sistemas y Redes
   </footer>
+   <script src="js/scripts.js"></script>
 
 </body>
 </html>
