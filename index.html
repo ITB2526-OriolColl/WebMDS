@@ -10,13 +10,29 @@
 <body>
 
   <header>
-
-    <div class="menu">☰ Menú</div>
-    <div class="logo">Oriol Coll | ASIX</div>
-    <div class="header-contact">
-    <a href="#contact" class="btn-contact-header">Establecer Conexión</a>
+  <div class="header-container">
+    <div class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        ORIOL COLL <span style="color: #555;">|</span> ASIX
+      </a>
     </div>
-  </header>
+
+    <nav class="header-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#proyectos" class="dropbtn">Proyectos ▾</a>
+          <div class="dropdown-content">
+            <a href="proyecto-cisco.html">Redes (Cisco)</a>
+            <a href="proyecto-linux.html">Hardening (Linux)</a>
+              <a href="proyectos-cartelera.html">Otros</a>
+          </div>
+        </li>
+        <li><a href="mailto:oriol.coll.7e9@itb.cat" class="btn-contact-nav">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <main>
    <section class="hero">
@@ -37,48 +53,57 @@
   </div>
 
   <div class="projects-grid">
-  <article class="project-card">
-    <div class="project-terminal-bar">
-      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-      <span class="terminal-title">infraestructura_red.pka</span>
-    </div>
-    <div class="img-container">
-      <img src="img/Cisco.png" alt="Infraestructura de Red Segura">
-      <div class="img-overlay">Explorar Topología</div>
-    </div>
-    <div class="project-info">
-      <h3>Diseño de Red Corporativa Segura</h3>
-      <p>Configuración integral de switches y routers Cisco. Implementación de segmentación por VLANs, protocolos OSPF y listas de control de acceso (ACL) para proteger el tráfico interno.</p>
-      <div class="tech-stack">
-        <span>Cisco IOS</span>
-        <span>VLANs</span>
-        <span>Routing</span>
+    <article class="project-card">
+      <div class="project-terminal-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">infraestructura_red.pka</span>
       </div>
-    </div>
-  </article>
 
-  <article class="project-card">
-    <div class="project-terminal-bar">
-      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-      <span class="terminal-title">hardening_linux.sh</span>
-    </div>
-    <div class="img-container">
-      <img src="img/Linux.png" alt="Bastionado de Servidores">
-      <div class="img-overlay">Ver Documentación</div>
-    </div>
-    <div class="project-info">
-      <h3>Seguridad y Hardening en Linux</h3>
-      <p>Auditoría y securización de servidores Debian/Ubuntu. Incluye configuración de Firewalls perimetrales, gestión de políticas de contraseñas y monitorización de logs para detección de intrusos.</p>
-      <div class="tech-stack">
-        <span>Bash</span>
-        <span>UFW/Fail2Ban</span>
-        <span>Security</span>
+      <a href="proyecto-cisco.html" class="project-main-link">
+        <div class="img-container">
+          <img src="img/Cisco.png" alt="Infraestructura de Red Segura">
+          <div class="img-overlay">Explorar Topología</div>
+        </div>
+      </a>
+
+      <div class="project-info">
+        <h3><a href="proyecto-cisco.html">Diseño de Red Corporativa Segura</a></h3>
+        <p>Configuración integral de switches y routers Cisco. Implementación de segmentación por VLANs, protocolos OSPF y listas de control de acceso (ACL) para proteger el tráfico interno.</p>
+        <div class="tech-stack">
+          <span>Cisco IOS</span>
+          <span>VLANs</span>
+          <span>Routing</span>
+        </div>
       </div>
-    </div>
+    </article>
 
+    <article class="project-card">
+      <div class="project-terminal-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">hardening_linux.sh</span>
+      </div>
+
+      <a href="proyecto-linux.html" class="project-main-link">
+        <div class="img-container">
+          <img src="img/Linux.png" alt="Bastionado de Servidores">
+          <div class="img-overlay">Ver Documentación</div>
+        </div>
+      </a>
+
+      <div class="project-info">
+        <h3><a href="proyecto-linux.html">Seguridad y Hardening en Linux</a></h3>
+        <p>Auditoría y securización de servidores Debian/Ubuntu. Incluye configuración de Firewalls perimetrales, gestión de políticas de contraseñas y monitorización de logs para detección de intrusos.</p>
+        <div class="tech-stack">
+          <span>Bash</span>
+          <span>UFW/Fail2Ban</span>
+          <span>Security</span>
+        </div>
+      </div>
     </article>
   </div>
 </section>
+
+
   </main>
 
   <section class="skills">
@@ -94,13 +119,7 @@
     </div>
 </section>
 
-  <section class="final-cta">
-    <h2>¿Necesitas asegurar tu infraestructura?</h2>
-    <p>Disponible para nuevos retos y proyectos en administración de sistemas y redes.</p>
-    <a href="mailto:tu-correo@ejemplo.com" class="main-contact-button">
-        <span class="btn-icon">⚡</span> ENVIAR MENSAJE
-    </a>
-</section>
+
 
   <footer>
     © 2025 CyberAdmin - Administrador de Sistemas y Redes

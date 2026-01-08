@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Técnico | Infraestructura Cisco</title>
+    <link rel="stylesheet" href="css/estilos.css"> <link rel="stylesheet" href="css/proyecto.css"> </head>
+<body class="project-page">
+
+    <header>
+        <div class="logo">ORIOL COLL <span style="color: #555;">|</span> ASIX</div>
+        <a href="index.html" class="btn-contact">← VOLVER AL DASHBOARD</a>
+    </header>
+
+    <main class="detail-container">
+        <section class="report-header">
+            <p class="report-id">DOCUMENT_ID: #NET-CISC-2024</p>
+            <h1>Infraestructura de Red Corporativa Segura</h1>
+            <div class="status-tags">
+                <span class="tag">VLANs</span>
+                <span class="tag">OSPF</span>
+                <span class="tag">ACLs</span>
+                <span class="tag">INTER-ROUTING</span>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <aside class="sidebar">
+                <div class="terminal-mockup">
+                    <div class="terminal-top">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="term-title">network_topology.pka</span>
+                    </div>
+                    <img src="img/Cisco.png" alt="Topología de red">
+                </div>
+
+                <div class="tech-specs">
+    <h3>Configuración de Red</h3>
+    <ul>
+        <li><strong>Routing:</strong> Estático (Manual)</li>
+        <li><strong>Backup:</strong> Ruta Flotante</li>
+        <li><strong>Métrica:</strong> Distancia Administrativa 10</li>
+        <li><strong>Disponibilidad:</strong> Conmutación por error (Failover)</li>
+    </ul>
+</div>
+            </aside>
+
+            <article class="main-text">
+    <h2>Enrutamiento Estático</h2>
+    <p>Para garantizar una conectividad directa y eficiente entre los nodos de la red, he implementado <strong>rutas estáticas</strong>. Este método permite un control total sobre el camino que siguen los paquetes, eliminando la sobrecarga de protocolos dinámicos y asegurando que el tráfico crítico llegue siempre a su destino.</p>
+
+    <div class="code-terminal">
+        <pre>
+<code>! Configuración de la ruta estática principal
+Router(config)# ip route 10.0.20.0 255.255.255.0 172.16.0.2
+! Verificación en la tabla de enrutamiento
+Router# show ip route</code>
+        </pre>
+    </div>
+
+    <h2>Ruta Estática Flotante (Redundancia)</h2>
+    <p>Con el objetivo de prevenir caídas de servicio, he configurado una <strong>ruta flotante</strong> como mecanismo de backup. Al asignarle una <strong>distancia administrativa superior (10)</strong>, esta ruta permanece inactiva mientras el enlace principal esté operativo, activándose automáticamente solo en caso de fallo.</p>
+
+    <div class="code-terminal">
+        <pre>
+<code>! Ruta flotante por enlace secundario con AD de 10
+Router(config)# ip route 10.0.20.0 255.255.255.0 192.168.1.1 10</code>
+        </pre>
+    </div>
+
+
+
+    <h2>Objetivo Técnico</h2>
+    <p>Esta configuración demuestra la capacidad de diseñar una red con <strong>tolerancia a fallos</strong> simple pero efectiva, asegurando que la infraestructura mantenga la disponibilidad incluso ante la desconexión del gateway principal.</p>
+</article>
+
+                <h2>Resultados Obtenidos</h2>
+                <p>Tras el despliegue, se redujo el dominio de difusión en un 60% y se eliminó por completo el tráfico lateral no deseado entre el departamento de Marketing y el de Administración.</p>
+            </article>
+        </div>
+    </main>
+</body>
+</html>

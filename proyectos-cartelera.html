@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositorio de Proyectos | Oriol Coll</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/cartelera.css">
+</head>
+<body class="netflix-theme">
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    ORIOL COLL <span style="color: #555;">|</span> ASIX
+                </a>
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="mailto:tu-correo@ejemplo.com" class="btn-contact-nav">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="gallery-container">
+        <h1 class="gallery-title">Sistemas e Infraestructura</h1>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterProjects('all', event)">Todos</button>
+            <button class="filter-btn" onclick="filterProjects('cisco', event)">Cisco/Redes</button>
+            <button class="filter-btn" onclick="filterProjects('linux', event)">Linux</button>
+            <button class="filter-btn" onclick="filterProjects('windows', event)">Windows Server</button>
+            <button class="filter-btn" onclick="filterProjects('db', event)">Bases de Datos</button>
+        </div>
+
+        <div class="projects-netflix-grid" id="projectGrid">
+
+            <div class="project-item cisco">
+                <div class="project-icon"><span>VLAN</span></div>
+                <div class="item-details"><h3>Segmentación de Red</h3><span class="badge">Redes</span></div>
+            </div>
+            <div class="project-item cisco">
+                <div class="project-icon"><span>OSPF</span></div>
+                <div class="item-details"><h3>Enrutamiento Dinámico</h3><span class="badge">Redes</span></div>
+            </div>
+            <div class="project-item cisco">
+                <div class="project-icon"><span>VPN</span></div>
+                <div class="item-details"><h3>Túnel IPsec</h3><span class="badge">Redes</span></div>
+            </div>
+            <div class="project-item cisco">
+                <div class="project-icon"><span>HSRP</span></div>
+                <div class="item-details"><h3>Redundancia de Gateway</h3><span class="badge">Redes</span></div>
+            </div>
+            <div class="project-item cisco">
+                <div class="project-icon"><span>ACL</span></div>
+                <div class="item-details"><h3>Listas de Control</h3><span class="badge">Redes</span></div>
+            </div>
+
+            <div class="project-item linux">
+                <div class="project-icon"><span>SSH</span></div>
+                <div class="item-details"><h3>Hardening SSH</h3><span class="badge">Linux</span></div>
+            </div>
+            <div class="project-item linux">
+                <div class="project-icon"><span>NGX</span></div>
+                <div class="item-details"><h3>Proxy Inverso</h3><span class="badge">Linux</span></div>
+            </div>
+            <div class="project-item linux">
+                <div class="project-icon"><span>DKR</span></div>
+                <div class="item-details"><h3>Orquestación Docker</h3><span class="badge">Linux</span></div>
+            </div>
+            <div class="project-item linux">
+                <div class="project-icon"><span>SH</span></div>
+                <div class="item-details"><h3>Scripts Automatizados</h3><span class="badge">Linux</span></div>
+            </div>
+            <div class="project-item linux">
+                <div class="project-icon"><span>ZBX</span></div>
+                <div class="item-details"><h3>Monitorización Zabbix</h3><span class="badge">Linux</span></div>
+            </div>
+
+            <div class="project-item windows">
+                <div class="project-icon"><span>AD</span></div>
+                <div class="item-details"><h3>Active Directory</h3><span class="badge">Windows</span></div>
+            </div>
+            <div class="project-item windows">
+                <div class="project-icon"><span>GPO</span></div>
+                <div class="item-details"><h3>Gestión de Políticas</h3><span class="badge">Windows</span></div>
+            </div>
+            <div class="project-item windows">
+                <div class="project-icon"><span>WSS</span></div>
+                <div class="item-details"><h3>Servidor WSUS</h3><span class="badge">Windows</span></div>
+            </div>
+            <div class="project-item windows">
+                <div class="project-icon"><span>IIS</span></div>
+                <div class="item-details"><h3>Web Server IIS</h3><span class="badge">Windows</span></div>
+            </div>
+            <div class="project-item windows">
+                <div class="project-icon"><span>AZ</span></div>
+                <div class="item-details"><h3>Híbrido Azure AD</h3><span class="badge">Windows</span></div>
+            </div>
+
+            <div class="project-item db">
+                <div class="project-icon"><span>SQL</span></div>
+                <div class="item-details"><h3>Optimización MySQL</h3><span class="badge">DB</span></div>
+            </div>
+            <div class="project-item db">
+                <div class="project-icon"><span>PG</span></div>
+                <div class="item-details"><h3>Replicación Postgres</h3><span class="badge">DB</span></div>
+            </div>
+            <div class="project-item db">
+                <div class="project-icon"><span>MGO</span></div>
+                <div class="item-details"><h3>NoSQL Cluster</h3><span class="badge">DB</span></div>
+            </div>
+            <div class="project-item db">
+                <div class="project-icon"><span>DRP</span></div>
+                <div class="item-details"><h3>Plan de Recuperación</h3><span class="badge">DB</span></div>
+            </div>
+            <div class="project-item db">
+                <div class="project-icon"><span>ORA</span></div>
+                <div class="item-details"><h3>Oracle DB Admin</h3><span class="badge">DB</span></div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function filterProjects(category, event) {
+            const items = document.querySelectorAll('.project-item');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -504,6 +504,76 @@ footer {
   text-align: center;
   color: #666;
 }
+/* Estructura de la navegación */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
 
+.nav-links li a {
+  text-decoration: none;
+  color: #eee;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+}
+
+/* Estilo del menú desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #0a0a0a;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+  border: 1px solid #222;
+  z-index: 1001;
+  border-radius: 4px;
+  top: 100%;
+}
+
+.dropdown-content a {
+  color: #eee;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+  background-color: #111;
+  color: #007bff;
+  border-left: 3px solid #007bff;
+}
+
+/* Mostrar al pasar el ratón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Botón de contacto específico en el menú */
+.btn-contact-nav {
+  border: 1px solid #007bff;
+  padding: 5px 15px !important;
+  border-radius: 4px;
+  color: #007bff !important;
+}
+
+.btn-contact-nav:hover {
+  background: #007bff;
+  color: #000 !important;
+}
 
 

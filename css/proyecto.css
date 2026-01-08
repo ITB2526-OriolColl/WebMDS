@@ -1,0 +1,117 @@
+/* Layout General */
+.project-page {
+    background-color: #050505;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.detail-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Header del informe */
+.report-header {
+    margin-bottom: 40px;
+}
+
+.report-id {
+    font-family: 'Fira Code', monospace;
+    color: #007bff;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.report-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    color: #fff;
+}
+
+.tag {
+    background: rgba(0, 123, 255, 0.1);
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+/* Grid de contenido */
+.content-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+}
+
+/* Ventana tipo terminal */
+.terminal-mockup {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.terminal-top {
+    background: #222;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.term-title {
+    font-size: 0.7rem;
+    color: #888;
+    margin-left: auto;
+}
+
+.terminal-mockup img {
+    width: 100%;
+    filter: grayscale(0.2) contrast(1.1);
+}
+
+/* Bloque de código */
+.code-terminal {
+    background: #000;
+    border-left: 3px solid #28a745;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.code-terminal code {
+    font-family: 'Fira Code', monospace;
+    color: #00ff00;
+    font-size: 0.85rem;
+}
+
+.main-text h2 {
+    color: #00d4ff;
+    font-family: 'Rajdhani', sans-serif;
+    margin-top: 30px;
+}
+
+/* Sidebar lateral */
+.tech-specs {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.tech-specs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-specs li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; }
+}

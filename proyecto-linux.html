@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Técnico | Hardening Linux</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/proyecto.css">
+</head>
+<body class="project-page">
+
+    <header>
+        <div class="logo">ORIOL COLL <span style="color: #555;">|</span> ASIX</div>
+        <a href="index.html" class="btn-contact">← VOLVER AL DASHBOARD</a>
+    </header>
+
+    <main class="detail-container">
+        <section class="report-header">
+            <p class="report-id">SYSTEM_LOG_ID: #LNX-HARD-002</p>
+            <h1>Seguridad y Hardening en Servidores Linux</h1>
+            <div class="status-tags">
+                <span class="tag">DEBIAN/UBUNTU</span>
+                <span class="tag">UFW</span>
+                <span class="tag">FAIL2BAN</span>
+                <span class="tag">SSH-SECURE</span>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <aside class="sidebar">
+                <div class="terminal-mockup">
+                    <div class="terminal-top">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="term-title">auth.log — 80x24</span>
+                    </div>
+                    <img src="img/Linux.png" alt="Seguridad Linux">
+                </div>
+
+                <div class="tech-specs">
+                    <h3>Checklist de Seguridad</h3>
+                    <ul>
+                        <li><strong>OS:</strong> Ubuntu Server 22.04 LTS</li>
+                        <li><strong>Firewall:</strong> UFW (Uncomplicated Firewall)</li>
+                        <li><strong>Brute Force:</strong> Fail2Ban Integration</li>
+                        <li><strong>Audit:</strong> Lynis Security Scan</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <article class="main-text">
+                <h2>Securización del Acceso SSH</h2>
+                <p>La primera fase del hardening consistió en blindar el acceso remoto. Se deshabilitó el acceso al usuario <strong>root</strong> y se cambió el puerto por defecto para mitigar ataques de bots automatizados.</p>
+
+                <div class="code-terminal">
+                    <pre>
+<code># Editando configuración de SSH
+sudo nano /etc/ssh/sshd_config
+
+# Cambios aplicados:
+Port 2222
+PermitRootLogin no
+PasswordAuthentication no
+AllowUsers orioladmin</code>
+                    </pre>
+                </div>
+
+                <h2>Control de Tráfico con UFW</h2>
+                <p>Se implementó una política de <strong>denegación por defecto</strong>. Solo se abrieron los puertos estrictamente necesarios para los servicios en ejecución, aplicando el principio de mínimo privilegio.</p>
+
+
+
+                <div class="code-terminal">
+                    <pre>
+<code># Configuración de reglas básicas
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 2222/tcp
+sudo ufw enable</code>
+                    </pre>
+                </div>
+
+                <h2>Prevención de Intrusiones (Fail2Ban)</h2>
+                <p>Para proteger el sistema contra ataques de fuerza bruta, se configuró <strong>Fail2Ban</strong>. El sistema monitoriza los logs de autenticación y banea automáticamente las direcciones IP que muestran un comportamiento sospechoso tras 3 intentos fallidos.</p>
+
+                <div class="code-terminal">
+                    <pre>
+<code># Estado del baneo para SSH
+sudo fail2ban-client status sshd
+|- Filter
+|  |- Currently failed: 2
+|  `- Total failed: 15
+`- Actions
+   |- Currently banned: 1
+   `- Total banned: 5</code>
+                    </pre>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
+</html>
