@@ -577,4 +577,25 @@ footer {
   color: #000 !important;
 }
 
+@media (max-width: 768px) {
+    .hero-content {
+        width: 90%; /* Que ocupe casi todo el ancho */
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem; /* Texto más pequeño */
+    }
+
+    .hero-content p {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .btn-explore {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
 
