@@ -116,3 +116,33 @@
 @media (max-width: 768px) {
     .content-grid { grid-template-columns: 1fr; }
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #000;
+}
+
+.btn-contact {
+    text-decoration: none;
+    color: #00d9ff;
+    font-family: 'Orbitron', sans-serif; /* O tu fuente técnica */
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(0, 217, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background: rgba(0, 217, 255, 0.15);
+    border-color: #00d9ff;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+    transform: translateX(-3px); /* Pequeño movimiento reactivo */
+}
