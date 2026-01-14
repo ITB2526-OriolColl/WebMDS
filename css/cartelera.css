@@ -169,3 +169,40 @@
     border-color: rgba(0, 217, 255, 0.5);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
+/* Estilo específico para el botón de volver */
+.btn-contact {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+
+    /* Tipografía técnica que ya tienes cargada */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    /* Colores y bordes */
+    color: #00d9ff;
+    background: rgba(0, 217, 255, 0.05); /* Fondo casi invisible */
+    border: 1px solid rgba(0, 217, 255, 0.4);
+    border-radius: 6px;
+
+    padding: 8px 18px;
+    transition: all 0.3s ease;
+}
+
+/* Espaciado para la flecha */
+.btn-contact .arrow {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    /* Ajuste fino de altura para que la flecha no se vea más alta que el texto */
+    line-height: 1;
+}
+
+/* Efecto al pasar el ratón */
+.btn-contact:hover {
+    background: rgba(0, 217, 255, 0.15);
+    border-color: #00d9ff;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
